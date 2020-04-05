@@ -1,0 +1,88 @@
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 55px;
+     &:hover {
+         background-color: #f1f1f1;
+     }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            background: url("../../../assets/images/member-thumb.png");
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: contain;
+            border: 3px solid #167efb
+        }
+
+    }
+
+    &__content {
+        width: 100%;
+
+        .employee-info {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+            font-size: 20px;
+
+            &__name {
+                font-weight: bold;
+                display: flex;
+                flex-direction: row;
+
+                &--firstname {
+                    text-align: left;
+                }
+
+                &--lastname {
+                    margin-left: 10px;
+
+                }
+            }
+
+            &__email {}
+
+            &__gender {}
+
+            &__action {
+                .button {
+                    width: 100px;
+                    height: 25px;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: bold;
+                    color: #168efb;
+                    border: 3px solid #167efb;
+                    ;
+                    cursor: pointer;
+        
+                    &:hover {
+                        background-color: #167efb;
+                        color: #fff;
+        
+                    }
+        
+                    &__disabled {}
+                }
+            }
+
+        }
+    }
+}

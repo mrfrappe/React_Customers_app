@@ -1,0 +1,24 @@
+{
+  "name": "jsplayground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrfrappe/JSPlayground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrfrappe/JSPlayground/issues"
+  },
+  "homepage": "https://github.com/mrfrappe/JSPlayground#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "create-react-app": "^3.4.1",
+    "node-sass": "^4.13.1"
+  }
+}
