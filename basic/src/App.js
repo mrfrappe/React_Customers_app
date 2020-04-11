@@ -27,14 +27,47 @@
 
 import React from 'react';
 import ListWrapper from './components/ListWrapper/ListWrapper';
+import Form from './components/Form/Form'
+import { employeesData } from './assets/data/employeesData';
+
 import './index.css';
 
-const App = () => {
-  return (
-    <div>
-      <ListWrapper />
-    </div>
-  )
+class App extends React.Component {
+
+  state = {
+    items: [...employeesData]
+  }
+
+  onAddItem = (e) => {
+    e.preventDefault();
+
+    const newItem = {
+      id: this.state.items.length + 1,
+      first_name: e.target[0].value,
+      last_name: e.target[1].value,
+      email: e.target[2].value,
+      gender: e.target[3].value,
+    }
+
+    console.log(newItem)
+    this.setState(prevState => ({
+      items: [...prevState.items, newItem]
+    }));
+    
+    e.target.reset();
+
+    console.log(e.target.value)
+  }
+
+  render() {
+    return (
+    <>
+      <Form  submitFunction={this.onAddItem}/>
+      <ListWrapper items={this.state.items}/>
+    </>
+    )
+  }
+
 
 }
 

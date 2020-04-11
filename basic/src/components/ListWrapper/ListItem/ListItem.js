@@ -1,7 +1,10 @@
 import React from 'react';
-import './ListItem.scss'
+import PropTypes from 'prop-types';
+import Button from '../../Button/Button'
+import './list-item.scss'
 
-const ListItem = () => {
+const ListItem = ({first_name, last_name, email, gender}) => {
+
     return (
         <li className="list-item">
            <div className="list-item__image"><img /></div>
@@ -10,22 +13,33 @@ const ListItem = () => {
    
                     <div className="employee-info__name">
                     <div className="employee-info__name--firstname">
-                        John
+                        {first_name || 'John'}
                     </div> 
                     <div className="employee-info__name--lastname">
-                        Smith
+                        {last_name || 'Smith'}
                     </div> 
                     </div> 
     
-                    <div className="employee-info__email">john.smith@protonmail.com</div> 
-                    <div className="employee-info__gender">Not set</div> 
+                    <div className="employee-info__email">{email || 'john.smith@protonmail.com'}</div> 
+                    <div className="employee-info__gender">{gender || 'not set'}</div> 
                     <div className="employee-info__action">
-                        <div className="button"><i className="fas fa-edit"></i>Details</div>
+                        <Button>Details</Button>
                     </div> 
                 </div>
            </div>
         </li>
     )
+}
+
+ListItem.propTypes = {
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired
+}
+
+ListItem.defaultProps = {
+
 }
 
 export default ListItem;

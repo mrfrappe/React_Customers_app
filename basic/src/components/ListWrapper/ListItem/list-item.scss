@@ -44,6 +44,7 @@
                 font-weight: bold;
                 display: flex;
                 flex-direction: row;
+                flex: 1;
 
                 &--firstname {
                     text-align: left;
@@ -55,9 +56,13 @@
                 }
             }
 
-            &__email {}
+            &__email {
+                flex: 1
+            }
 
-            &__gender {}
+            &__gender {
+                flex: 1
+            }
 
             &__action {
                 .button {
@@ -69,8 +74,9 @@
                     align-items: center;
                     font-weight: bold;
                     color: #168efb;
-                    border: 3px solid #167efb;
-                    ;
+                    border: 1px solid #167efb;
+                    margin-right: 10px;
+                    font-size: 16px;
                     cursor: pointer;
         
                     &:hover {
