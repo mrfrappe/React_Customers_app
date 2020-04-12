@@ -1,0 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+
+.wrapper {
+    @extend .col-md-8;
+    margin-top: 20px;
+    .list {
+        padding: 0;
+    }
+}

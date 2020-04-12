@@ -44,7 +44,7 @@
                 font-weight: bold;
                 display: flex;
                 flex-direction: row;
-                flex: 1;
+                font-size: 16px;
 
                 &--firstname {
                     text-align: left;
@@ -57,14 +57,20 @@
             }
 
             &__email {
-                flex: 1
+                font-size: 16px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             &__gender {
-                flex: 1
+                font-size: 16px;
+
             }
 
             &__action {
+                font-size: 16px;
+
                 .button {
                     width: 100px;
                     height: 25px;

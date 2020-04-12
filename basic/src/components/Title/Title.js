@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './header.module.scss';
+import styles from './title.module.scss';
 
-const Header = ({title}) =>  {
+const Title = ({title}) =>  {
     return (
         <div className={styles.header}>
             <h2 className={styles.header__h2}>{title}</h2>
@@ -9,4 +9,4 @@ const Header = ({title}) =>  {
     )
 }
 
-export default Header;
+export default Title;

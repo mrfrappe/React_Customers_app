@@ -9,9 +9,9 @@ const ListItem = ({first_name, last_name, email, gender}) => {
         <li className="list-item">
            <div className="list-item__image"><img /></div>
            <div className="list-item__content">
-                <div className="employee-info">
+                <div className="employee-info row">
    
-                    <div className="employee-info__name">
+                    <div className="employee-info__name col-md-4">
                     <div className="employee-info__name--firstname">
                         {first_name || 'John'}
                     </div> 
@@ -20,10 +20,10 @@ const ListItem = ({first_name, last_name, email, gender}) => {
                     </div> 
                     </div> 
     
-                    <div className="employee-info__email">{email || 'john.smith@protonmail.com'}</div> 
-                    <div className="employee-info__gender">{gender || 'not set'}</div> 
-                    <div className="employee-info__action">
-                        <Button>Details</Button>
+                    <div className="employee-info__email col-md-4">{email || 'john.smith@protonmail.com'}</div> 
+                    <div className="employee-info__gender col-md-2">{gender || 'not set'}</div> 
+                    <div className="employee-info__action col-md-2">
+                        <Button>Edit</Button>
                     </div> 
                 </div>
            </div>

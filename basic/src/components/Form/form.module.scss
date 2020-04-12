@@ -1,5 +1,15 @@
 
+@import "~bootstrap/scss/bootstrap";
+
 .wrapper {
+    @extend .col-md-4;
+    position: fixed;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+
     .form {
         display: flex;
         flex-direction: column;

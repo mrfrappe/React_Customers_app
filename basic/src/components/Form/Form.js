@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './form.module.scss';
-import Header from '../Header/Header';
+import Title from '../Title/Title';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 
@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 const Form = ({submitFunction}) => {
     return (
         <div className={styles.wrapper}>
-            <Header title="Add new employee"/>
+            <Title title="Add new employee"/>
             <form className={styles.form} onSubmit={submitFunction}>
                 <Input 
                     name="first_name"
@@ -26,7 +26,7 @@ const Form = ({submitFunction}) => {
                     name="gender"
                     text="Gender"
                 />
-                <Button tag="button">New employee </Button>
+                <Button tag="button" additionalClass="xl">New employee </Button>
             </form>
         </div>
     )

@@ -1,5 +1,7 @@
 .button {
-    width: 150px;
+    color: inherit; 
+    text-decoration: none;
+    width: 80px;
     height: 25px;
     margin: auto;
     border-radius: 20px;
@@ -11,11 +13,21 @@
     border: 1px solid #167efb;
     cursor: pointer;
     background-color: #fff;
-    margin-top: 10px;
+
 
     &:hover {
         background-color: #167efb;
-        color: #fff;
+        color: #fff !important;
 
     }
+    &__xl {
+        @extend .button;
+        margin-top: 10px;
+        width: 150px
+    }
+}
+
+a:not([href]) {
+    color: #168efb !important;
+    text-decoration: none;
 }

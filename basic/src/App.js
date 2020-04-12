@@ -26,11 +26,10 @@
 // export default App;
 
 import React from 'react';
-import ListWrapper from './components/ListWrapper/ListWrapper';
+import List from './components/List/List';
 import Form from './components/Form/Form'
 import { employeesData } from './assets/data/employeesData';
-
-import './index.css';
+import './index.scss';
 
 class App extends React.Component {
 
@@ -53,7 +52,7 @@ class App extends React.Component {
     this.setState(prevState => ({
       items: [...prevState.items, newItem]
     }));
-    
+
     e.target.reset();
 
     console.log(e.target.value)
@@ -61,10 +60,10 @@ class App extends React.Component {
 
   render() {
     return (
-    <>
+    <div className="row">
+      <List items={this.state.items}/>
       <Form  submitFunction={this.onAddItem}/>
-      <ListWrapper items={this.state.items}/>
-    </>
+    </div>
     )
   }
 
