@@ -81,7 +81,7 @@ const Form = ({edit, object}) => {
                                     disabled={true}
 
                                 />
-                                <Button tag="button" >Save </Button>
+                                <Button tag="button" additionalClass="xl">Save </Button>
                             </form>
                         </div>
                     ) : (

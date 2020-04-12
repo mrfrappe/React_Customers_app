@@ -23,7 +23,16 @@
     &__xl {
         @extend .button;
         margin-top: 10px;
-        width: 150px
+        width: 150px;
+    }
+    &__red {
+        color: #e40000;
+        border: 1px solid #e40000;
+        &:hover {
+            background-color: #e40000;
+            color: #fff !important;
+    
+        }
     }
 }
 

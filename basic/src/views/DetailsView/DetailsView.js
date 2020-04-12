@@ -3,13 +3,14 @@ import styles from './details-view.module.scss';
 import AppContext from '../../context';
 import Title from '../../components/Title/Title';
 import Form from '../../components/Form/Form';
-import Thumb from '../../components/Thumb/Thumb'
+import Button from '../../components/Button/Button';
+import Thumb from '../../components/Thumb/Thumb';
 import Navigator from '../../components/Navigator/Navigator';
-import List from '../../components/List/List';
+import List from '../../components/InvoicesList/List';
 import { employeesDetailsData } from '../../assets/data/employeesData';
 let employeeObject = {};
 let employeeDetailsObject = {};
-let invoicesCollection = [];
+let invoicesCollection = {};
 
 const DetailsView = () => {
 
@@ -34,13 +35,15 @@ const DetailsView = () => {
                 <div className={styles.wrapper}>
                     <Title title={employeeObject.first_name + ' ' + employeeObject.last_name + ' ID[' + employeeObject.id + ']'}></Title>
                     <div className={styles.wrapper__content}>
-                        <Thumb/>
+                        <div className={styles.wrapper__thumb}>
+                            <Thumb/>
+                            <Button type='button' additionalClass="xl red">Delete</Button>
+                        </div>
                         <Form edit="true" object={{employeeObject, employeeDetailsObject}}/>
                     </div>
                     <Title title="Invoices"></Title>
-                    <div className={styles.wrapper__invoice}>
-    
-                        {/* <List items={invoicesCollection}/> */}
+                    <div className={styles.wrapper__content}>
+                        <List items={invoicesCollection}></List>
                     </div>
                 </div>
                 </>
@@ -79,7 +82,10 @@ employeeId) => {
 
 }
 const getEmployeesInvoices = (invoicesList, employeeId) => {
-    invoicesCollection = invoicesList.find(item => item.employee__id === employeeId);
+    console.log(invoicesList, employeeId)
+
+    invoicesCollection = invoicesList.filter(item => item.employee__id === employeeId);
+    console.log(invoicesCollection)
 }
 
 

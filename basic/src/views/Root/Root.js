@@ -28,28 +28,45 @@ class Root extends React.Component {
       email: e.target[2].value,
       gender: e.target[3].value,
     }
+    const newDetails = {
+      id: this.state.items.length + 1,
+
+    }
+
 
     this.setState(prevState => ({
-      items: [...prevState.items, newItem]
+      items: [...prevState.items, newItem],
+      itemsDetails: [...prevState.itemsDetails, newDetails]
+
     }));
 
     e.target.reset();
-
-    console.log(e.target.value)
   }
 
   onEditItem = (e) => {
     e.preventDefault();
 
-    const editedItem = {
-      items: [],
-      itemsDetails: [],
-      invoicesData: []
+    console.log(e.target, e.target[0].value)
 
+    const editedItem = {
+      items: {
+        first_name: e.target[0].value,
+        last_name: e.target[1].value,
+        email: e.target[2].value,
+        gender: e.target[3].value,},
+      itemsDetails: {
+        company: e.target[4].value,
+        address: e.target[5].value,
+        city: e.target[6].value,
+        country: e.target[7].value,
+        iban: e.target[8].value,
+        currency: e.target[9].value},
     }
     
-    // this.setState(prevState => ({
-    // }));
+    // to do extend objects
+    this.setState(prevState => ({
+
+    }));
 
   }
 
@@ -57,7 +74,8 @@ class Root extends React.Component {
 
     const contextElement = {
       ...this.state,
-      onAddItem: this.onAddItem
+      onAddItem: this.onAddItem,
+      onEditItem: this.onEditItem
     }
     return (
     <BrowserRouter>

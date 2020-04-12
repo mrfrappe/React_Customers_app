@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from '../Title/Title';
-import ListItem from './ListItem/ListItem';
+import ListItem from './ListItem';
 import styles from './list.module.scss';
 import { employeesData } from '../../assets/data/employeesData';
 

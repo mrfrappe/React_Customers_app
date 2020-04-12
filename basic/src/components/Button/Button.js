@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 const Button = ({tag, children, additionalClass, href}) => {
 
     var buttonClass = (additionalClass) ? styles.button__xl : styles.button;
-    console.log(buttonClass)
     return (
         tag === 'button' ? (
             <button type="submit" className={buttonClass}>

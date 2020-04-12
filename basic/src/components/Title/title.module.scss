@@ -5,5 +5,8 @@
         font-size: 18px;
         font-weight: bold;
         color: #167efb;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
     }
 }

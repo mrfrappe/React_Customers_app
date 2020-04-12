@@ -10,7 +10,7 @@ const ListView = () => {
     return (
         <AppContext.Consumer>
             {(context) => (
-                <div className="row">
+                <div className={styles.wrapper}>
                     <List items={context.items}/>
                     <Form/>
                 </div>
