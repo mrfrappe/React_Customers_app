@@ -1,0 +1,15 @@
+.wrapper {
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    &__invoice {
+        width: 100%;
+        height: 200px;
+        border: 1px solid #ccc;
+    }
+
+}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../../Button/Button'
 import './list-item.scss'
 
-const ListItem = ({first_name, last_name, email, gender}) => {
+const ListItem = ({id, first_name, last_name, email, gender}) => {
 
     return (
         <li className="list-item">
@@ -23,7 +23,7 @@ const ListItem = ({first_name, last_name, email, gender}) => {
                     <div className="employee-info__email col-md-4">{email || 'john.smith@protonmail.com'}</div> 
                     <div className="employee-info__gender col-md-2">{gender || 'not set'}</div> 
                     <div className="employee-info__action col-md-2">
-                        <Button>Edit</Button>
+                        <Button href={"/edit/:" + id}>Edit</Button>
                     </div> 
                 </div>
            </div>

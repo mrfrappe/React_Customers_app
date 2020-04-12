@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './button.module.scss';
 import PropTypes from 'prop-types'
 
-const Button = ({tag, children, additionalClass}) => {
+const Button = ({tag, children, additionalClass, href}) => {
 
     var buttonClass = (additionalClass) ? styles.button__xl : styles.button;
     console.log(buttonClass)
@@ -12,7 +12,8 @@ const Button = ({tag, children, additionalClass}) => {
                 {children}
             </button>
         ) :  (
-            <a className={buttonClass}>
+            <a className={buttonClass}
+               href={href}>
                 {children}
             </a>
         )

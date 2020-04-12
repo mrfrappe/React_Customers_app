@@ -1,5 +1,4 @@
 import React from 'react';
-import App from '../../App';
 import Title from '../Title/Title';
 import ListItem from './ListItem/ListItem';
 import styles from './list.module.scss';
