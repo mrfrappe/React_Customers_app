@@ -46,15 +46,17 @@ class Root extends React.Component {
   onEditItem = (e) => {
     e.preventDefault();
 
-    console.log(e.target, e.target[0].value)
+    let employeeId = Number.parseInt(e.target.getAttribute('data-employee-id'));
 
     const editedItem = {
-      items: {
+      item: {
+        id: employeeId,
         first_name: e.target[0].value,
         last_name: e.target[1].value,
         email: e.target[2].value,
         gender: e.target[3].value,},
-      itemsDetails: {
+      itemDetails: {
+        id: employeeId,
         company: e.target[4].value,
         address: e.target[5].value,
         city: e.target[6].value,
@@ -62,20 +64,39 @@ class Root extends React.Component {
         iban: e.target[8].value,
         currency: e.target[9].value},
     }
-    
-    // to do extend objects
-    this.setState(prevState => ({
 
+
+    this.setState(prevState => ({
+      items : prevState.items.map(item => (item.id == employeeId) ? editedItem.item : item),
+      itemsDetails : prevState.itemsDetails.map(item => (item.id == employeeId) ? editedItem.itemDetails : item)
     }));
 
-  }
+  };
+
+  onDeleteItem = (e) => {
+    e.preventDefault();
+    const employeeId = Number.parseInt(window.location.href.substr(window.location.href.lastIndexOf(":") + 1, window.location.href.length ));
+
+    this.setState(prevState => ({
+      items : prevState.items.filter(item => (item.id != employeeId)),
+      itemsDetails : prevState.itemsDetails.filter(item => (item.id != employeeId))
+    }));
+
+  };
+
+  onDBSave = () => {
+    employeesData = this.state.items;
+    employeesDetailsData = this.state.itemsDetails;
+    invoicesData = this.state.invoicesData;
+  };
 
   render() {
 
     const contextElement = {
       ...this.state,
       onAddItem: this.onAddItem,
-      onEditItem: this.onEditItem
+      onEditItem: this.onEditItem,
+      onDeleteItem: this.onDeleteItem
     }
     return (
     <BrowserRouter>

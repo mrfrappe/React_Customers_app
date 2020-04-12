@@ -9,7 +9,6 @@ import Button from '../Button/Button';
 const Form = ({edit, object}) => {
     let editMode = (edit) ? true : false;
 
-    console.log(object)
 
     return (
         <AppContext.Consumer>
@@ -17,7 +16,9 @@ const Form = ({edit, object}) => {
                     editMode === true ? (
                         <div className={styles.wrapper__edit}>
                             <Title title="Edit employee"/>
-                            <form className={styles.form} onSubmit={context.onEditItem}>
+                            <form className={styles.form} 
+                                  onSubmit={context.onEditItem} 
+                                  data-employee-id={object.employeeObject.id}>
                                 <Input 
                                     name="first_name"
                                     text="First name"

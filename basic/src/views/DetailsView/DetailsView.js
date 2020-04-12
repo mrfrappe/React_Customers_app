@@ -14,7 +14,7 @@ let invoicesCollection = {};
 
 const DetailsView = () => {
 
-    const employeeId = Number.parseInt(window.location.href.substr(window.location.href.lastIndexOf(":") + 1, window.location.href.length ))
+    const employeeId = Number.parseInt(window.location.href.substr(window.location.href.lastIndexOf(":") + 1, window.location.href.length ));
 
 
     return (
@@ -37,7 +37,7 @@ const DetailsView = () => {
                     <div className={styles.wrapper__content}>
                         <div className={styles.wrapper__thumb}>
                             <Thumb/>
-                            <Button type='button' additionalClass="xl red">Delete</Button>
+                            <Button tag='button' additionalClass="xl red" clickFn={context.onDeleteItem}>Delete</Button>
                         </div>
                         <Form edit="true" object={{employeeObject, employeeDetailsObject}}/>
                     </div>
