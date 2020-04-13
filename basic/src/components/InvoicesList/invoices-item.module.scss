@@ -24,6 +24,7 @@
         }
         &__net {
             @extend .col-md-2;
+            display: flex;
 
         }
         &__tax {
@@ -32,10 +33,12 @@
         }
         &__gross {
             @extend .col-md-2;
+            display: flex;
 
         }
         &__total {
             @extend .col-md-2;
+            display: flex;
 
         }
         &__payed {
@@ -46,7 +49,10 @@
             @extend .col-md-2;
 
         }
-
-
+    }
+    span {
+        font-weight: bold;
+        margin-left: 3px;
+        
     }
 }

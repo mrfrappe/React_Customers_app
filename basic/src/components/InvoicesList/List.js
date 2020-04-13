@@ -2,10 +2,7 @@ import React from 'react';
 import ListItem from './ListItem'
 import styles from './invoices-list.module.scss';
 
-const List = ({items}) => {
-    console.log(items)
-
-    
+const List = ({items, currencySign}) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__header}>
@@ -19,7 +16,7 @@ const List = ({items}) => {
             </div>
             <ul className={styles.list}>
                 {items.map(item => 
-                    <ListItem key={item.id} {...item} />
+                    <ListItem key={item.id} {...item} currencySign={currencySign}/>
                 )}
             </ul>
         </div>

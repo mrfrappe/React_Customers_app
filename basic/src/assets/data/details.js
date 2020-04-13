@@ -1,4 +1,4 @@
-export const employeesDetailsData = [{
+export const details = [{
         "id": 1,
         "company": "Spencer-Conn",
         "address": "16 Debra Parkway",

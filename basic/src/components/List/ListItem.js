@@ -9,20 +9,20 @@ const ListItem = ({id, first_name, last_name, email, gender}) => {
         <li className={styles.listItem}>
            <div className={styles.listItem__image}><img /></div>
            <div className={styles.listItem__content}>
-                <div className={styles.employeeInfo}>
+                <div className={styles.customerInfo}>
    
-                    <div className={styles.employeeInfo__name}>
-                    <div className={styles.employeeInfo__name_firstname}>
+                    <div className={styles.customerInfo__name}>
+                    <div className={styles.customerInfo__name_firstname}>
                         {first_name || 'John'}
                     </div> 
-                    <div className={styles.employeeInfo__name_lastname}>
+                    <div className={styles.customerInfo__name_lastname}>
                         {last_name || 'Smith'}
                     </div> 
                     </div> 
     
-                    <div className={styles.employeeInfo__email}>{email || 'john.smith@protonmail.com'}</div> 
-                    <div className={styles.employeeInfo__gender}>{gender || 'not set'}</div> 
-                    <div className={styles.employeeInfo__action}>
+                    <div className={styles.customerInfo__email}>{email || 'john.smith@protonmail.com'}</div> 
+                    <div className={styles.customerInfo__gender}>{gender || 'not set'}</div> 
+                    <div className={styles.customerInfo__action}>
                         <Button href={"/edit/:" + id}>Edit</Button>
                     </div> 
                 </div>

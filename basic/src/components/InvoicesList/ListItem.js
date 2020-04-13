@@ -1,18 +1,17 @@
 import React from 'react';
+import HTMLReactParser from 'html-react-parser';
 import styles from './invoices-item.module.scss';
 
-const ListItem = ({id, employee__id, net, tax, gross, payed, total, create_at}) => {
+const ListItem = ({id, customer__id, net, tax, gross, payed, total,create_at, currencySign}) => {
     net = formatMoney(net);
-    tax = formatMoney(tax);
-
     return (
         <li className={styles.listItem}>
                 <div className={styles.invoiceInfo__id}>{id}</div> 
-                    <div className={styles.invoiceInfo__net}>{net}</div> 
-                    <div className={styles.invoiceInfo__tax}>{tax}</div> 
-                    <div className={styles.invoiceInfo__gross}>{calculateGross(net,tax)}</div> 
-                    <div className={styles.invoiceInfo__total}>{calculateTotal(net,tax)}</div> 
-                    <div className={styles.invoiceInfo__payed}>{(payed === true) ? 'payed' : 'not payed' }</div> 
+    <div className={styles.invoiceInfo__net}>{net} <span> {currencySign} </span></div> 
+                    <div className={styles.invoiceInfo__tax}>{tax + '%'}</div> 
+                    <div className={styles.invoiceInfo__gross}>{calculateGross(net,tax)}  <span> {currencySign} </span></div> 
+                    <div className={styles.invoiceInfo__total}>{calculateTotal(net,tax)}  <span> {currencySign} </span></div> 
+                    <div className={styles.invoiceInfo__payed}>{(payed === true) ? 'payed' : '' }</div> 
                     <div className={styles.invoiceInfo__create_at}>{create_at}</div> 
 
         </li>

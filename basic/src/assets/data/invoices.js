@@ -1,6 +1,6 @@
-export const invoicesData = [{
+export const invoices = [{
         "id": 1,
-        "employee__id": 25,
+        "customer__id": 25,
         "net": 126.1,
         "gross": null,
         "tax": 21.77,
@@ -10,7 +10,7 @@ export const invoicesData = [{
     },
     {
         "id": 2,
-        "employee__id": 66,
+        "customer__id": 66,
         "net": 293.38,
         "gross": null,
         "tax": 6.83,
@@ -20,7 +20,7 @@ export const invoicesData = [{
     },
     {
         "id": 3,
-        "employee__id": 4,
+        "customer__id": 4,
         "net": 238.11,
         "gross": null,
         "tax": 19.64,
@@ -30,7 +30,7 @@ export const invoicesData = [{
     },
     {
         "id": 4,
-        "employee__id": 51,
+        "customer__id": 51,
         "net": 490.63,
         "gross": null,
         "tax": 3.6,
@@ -40,7 +40,7 @@ export const invoicesData = [{
     },
     {
         "id": 5,
-        "employee__id": 62,
+        "customer__id": 62,
         "net": 484.25,
         "gross": null,
         "tax": 6.1,
@@ -50,7 +50,7 @@ export const invoicesData = [{
     },
     {
         "id": 6,
-        "employee__id": 88,
+        "customer__id": 88,
         "net": 313.18,
         "gross": null,
         "tax": 1.37,
@@ -60,7 +60,7 @@ export const invoicesData = [{
     },
     {
         "id": 7,
-        "employee__id": 89,
+        "customer__id": 89,
         "net": 340.47,
         "gross": null,
         "tax": 10.85,
@@ -70,7 +70,7 @@ export const invoicesData = [{
     },
     {
         "id": 8,
-        "employee__id": 68,
+        "customer__id": 68,
         "net": 288.34,
         "gross": null,
         "tax": 16.06,
@@ -80,7 +80,7 @@ export const invoicesData = [{
     },
     {
         "id": 9,
-        "employee__id": 79,
+        "customer__id": 79,
         "net": 242.92,
         "gross": null,
         "tax": 16.97,
@@ -90,7 +90,7 @@ export const invoicesData = [{
     },
     {
         "id": 10,
-        "employee__id": 41,
+        "customer__id": 41,
         "net": 175.78,
         "gross": null,
         "tax": 6.64,
@@ -100,7 +100,7 @@ export const invoicesData = [{
     },
     {
         "id": 11,
-        "employee__id": 55,
+        "customer__id": 55,
         "net": 428.27,
         "gross": null,
         "tax": 21.52,
@@ -110,7 +110,7 @@ export const invoicesData = [{
     },
     {
         "id": 12,
-        "employee__id": 17,
+        "customer__id": 17,
         "net": 116.75,
         "gross": null,
         "tax": 17.52,
@@ -120,7 +120,7 @@ export const invoicesData = [{
     },
     {
         "id": 13,
-        "employee__id": 83,
+        "customer__id": 83,
         "net": 254.8,
         "gross": null,
         "tax": 9.22,
@@ -130,7 +130,7 @@ export const invoicesData = [{
     },
     {
         "id": 14,
-        "employee__id": 57,
+        "customer__id": 57,
         "net": 64.83,
         "gross": null,
         "tax": 5.0,
@@ -140,7 +140,7 @@ export const invoicesData = [{
     },
     {
         "id": 15,
-        "employee__id": 33,
+        "customer__id": 33,
         "net": 487.57,
         "gross": null,
         "tax": 1.92,
@@ -150,7 +150,7 @@ export const invoicesData = [{
     },
     {
         "id": 16,
-        "employee__id": 52,
+        "customer__id": 52,
         "net": 460.88,
         "gross": null,
         "tax": 4.81,
@@ -160,7 +160,7 @@ export const invoicesData = [{
     },
     {
         "id": 17,
-        "employee__id": 85,
+        "customer__id": 85,
         "net": 198.39,
         "gross": null,
         "tax": 18.84,
@@ -170,7 +170,7 @@ export const invoicesData = [{
     },
     {
         "id": 18,
-        "employee__id": 40,
+        "customer__id": 40,
         "net": 56.62,
         "gross": null,
         "tax": 7.2,
@@ -180,7 +180,7 @@ export const invoicesData = [{
     },
     {
         "id": 19,
-        "employee__id": 20,
+        "customer__id": 20,
         "net": 364.36,
         "gross": null,
         "tax": 3.31,
@@ -190,7 +190,7 @@ export const invoicesData = [{
     },
     {
         "id": 20,
-        "employee__id": 48,
+        "customer__id": 48,
         "net": 109.13,
         "gross": null,
         "tax": 5.96,
@@ -200,7 +200,7 @@ export const invoicesData = [{
     },
     {
         "id": 21,
-        "employee__id": 3,
+        "customer__id": 3,
         "net": 107.54,
         "gross": null,
         "tax": 6.2,
@@ -210,7 +210,7 @@ export const invoicesData = [{
     },
     {
         "id": 22,
-        "employee__id": 7,
+        "customer__id": 7,
         "net": 169.36,
         "gross": null,
         "tax": 13.46,
@@ -220,7 +220,7 @@ export const invoicesData = [{
     },
     {
         "id": 23,
-        "employee__id": 41,
+        "customer__id": 41,
         "net": 167.48,
         "gross": null,
         "tax": 1.96,
@@ -230,7 +230,7 @@ export const invoicesData = [{
     },
     {
         "id": 24,
-        "employee__id": 19,
+        "customer__id": 19,
         "net": 175.28,
         "gross": null,
         "tax": 16.04,
@@ -240,7 +240,7 @@ export const invoicesData = [{
     },
     {
         "id": 25,
-        "employee__id": 91,
+        "customer__id": 91,
         "net": 265.91,
         "gross": null,
         "tax": 22.59,
@@ -250,7 +250,7 @@ export const invoicesData = [{
     },
     {
         "id": 26,
-        "employee__id": 97,
+        "customer__id": 97,
         "net": 201.29,
         "gross": null,
         "tax": 8.28,
@@ -260,7 +260,7 @@ export const invoicesData = [{
     },
     {
         "id": 27,
-        "employee__id": 35,
+        "customer__id": 35,
         "net": 89.72,
         "gross": null,
         "tax": 7.19,
@@ -270,7 +270,7 @@ export const invoicesData = [{
     },
     {
         "id": 28,
-        "employee__id": 83,
+        "customer__id": 83,
         "net": 263.35,
         "gross": null,
         "tax": 8.05,
@@ -280,7 +280,7 @@ export const invoicesData = [{
     },
     {
         "id": 29,
-        "employee__id": 48,
+        "customer__id": 48,
         "net": 75.31,
         "gross": null,
         "tax": 18.66,
@@ -290,7 +290,7 @@ export const invoicesData = [{
     },
     {
         "id": 30,
-        "employee__id": 19,
+        "customer__id": 19,
         "net": 64.31,
         "gross": null,
         "tax": 17.04,
@@ -300,7 +300,7 @@ export const invoicesData = [{
     },
     {
         "id": 31,
-        "employee__id": 78,
+        "customer__id": 78,
         "net": 393.16,
         "gross": null,
         "tax": 0.66,
@@ -310,7 +310,7 @@ export const invoicesData = [{
     },
     {
         "id": 32,
-        "employee__id": 86,
+        "customer__id": 86,
         "net": 394.93,
         "gross": null,
         "tax": 4.26,
@@ -320,7 +320,7 @@ export const invoicesData = [{
     },
     {
         "id": 33,
-        "employee__id": 31,
+        "customer__id": 31,
         "net": 178.85,
         "gross": null,
         "tax": 11.19,
@@ -330,7 +330,7 @@ export const invoicesData = [{
     },
     {
         "id": 34,
-        "employee__id": 4,
+        "customer__id": 4,
         "net": 455.08,
         "gross": null,
         "tax": 5.12,
@@ -340,7 +340,7 @@ export const invoicesData = [{
     },
     {
         "id": 35,
-        "employee__id": 62,
+        "customer__id": 62,
         "net": 257.41,
         "gross": null,
         "tax": 8.96,
@@ -350,7 +350,7 @@ export const invoicesData = [{
     },
     {
         "id": 36,
-        "employee__id": 96,
+        "customer__id": 96,
         "net": 413.13,
         "gross": null,
         "tax": 19.1,
@@ -360,7 +360,7 @@ export const invoicesData = [{
     },
     {
         "id": 37,
-        "employee__id": 58,
+        "customer__id": 58,
         "net": 378.81,
         "gross": null,
         "tax": 12.54,
@@ -370,7 +370,7 @@ export const invoicesData = [{
     },
     {
         "id": 38,
-        "employee__id": 37,
+        "customer__id": 37,
         "net": 265.56,
         "gross": null,
         "tax": 5.38,
@@ -380,7 +380,7 @@ export const invoicesData = [{
     },
     {
         "id": 39,
-        "employee__id": 87,
+        "customer__id": 87,
         "net": 222.34,
         "gross": null,
         "tax": 16.41,
@@ -390,7 +390,7 @@ export const invoicesData = [{
     },
     {
         "id": 40,
-        "employee__id": 44,
+        "customer__id": 44,
         "net": 81.63,
         "gross": null,
         "tax": 15.03,
@@ -400,7 +400,7 @@ export const invoicesData = [{
     },
     {
         "id": 41,
-        "employee__id": 14,
+        "customer__id": 14,
         "net": 217.75,
         "gross": null,
         "tax": 17.65,
@@ -410,7 +410,7 @@ export const invoicesData = [{
     },
     {
         "id": 42,
-        "employee__id": 49,
+        "customer__id": 49,
         "net": 484.55,
         "gross": null,
         "tax": 13.2,
@@ -420,7 +420,7 @@ export const invoicesData = [{
     },
     {
         "id": 43,
-        "employee__id": 39,
+        "customer__id": 39,
         "net": 346.22,
         "gross": null,
         "tax": 2.66,
@@ -430,7 +430,7 @@ export const invoicesData = [{
     },
     {
         "id": 44,
-        "employee__id": 39,
+        "customer__id": 39,
         "net": 439.62,
         "gross": null,
         "tax": 0.0,
@@ -440,7 +440,7 @@ export const invoicesData = [{
     },
     {
         "id": 45,
-        "employee__id": 78,
+        "customer__id": 78,
         "net": 308.07,
         "gross": null,
         "tax": 5.78,
@@ -450,7 +450,7 @@ export const invoicesData = [{
     },
     {
         "id": 46,
-        "employee__id": 12,
+        "customer__id": 12,
         "net": 73.26,
         "gross": null,
         "tax": 16.87,
@@ -460,7 +460,7 @@ export const invoicesData = [{
     },
     {
         "id": 47,
-        "employee__id": 40,
+        "customer__id": 40,
         "net": 389.68,
         "gross": null,
         "tax": 11.4,
@@ -470,7 +470,7 @@ export const invoicesData = [{
     },
     {
         "id": 48,
-        "employee__id": 22,
+        "customer__id": 22,
         "net": 403.05,
         "gross": null,
         "tax": 2.64,
@@ -480,7 +480,7 @@ export const invoicesData = [{
     },
     {
         "id": 49,
-        "employee__id": 28,
+        "customer__id": 28,
         "net": 290.87,
         "gross": null,
         "tax": 15.49,
@@ -490,7 +490,7 @@ export const invoicesData = [{
     },
     {
         "id": 50,
-        "employee__id": 17,
+        "customer__id": 17,
         "net": 178.58,
         "gross": null,
         "tax": 20.18,
@@ -500,7 +500,7 @@ export const invoicesData = [{
     },
     {
         "id": 51,
-        "employee__id": 36,
+        "customer__id": 36,
         "net": 384.59,
         "gross": null,
         "tax": 22.28,
@@ -510,7 +510,7 @@ export const invoicesData = [{
     },
     {
         "id": 52,
-        "employee__id": 89,
+        "customer__id": 89,
         "net": 113.92,
         "gross": null,
         "tax": 21.03,
@@ -520,7 +520,7 @@ export const invoicesData = [{
     },
     {
         "id": 53,
-        "employee__id": 56,
+        "customer__id": 56,
         "net": 108.59,
         "gross": null,
         "tax": 4.66,
@@ -530,7 +530,7 @@ export const invoicesData = [{
     },
     {
         "id": 54,
-        "employee__id": 28,
+        "customer__id": 28,
         "net": 439.33,
         "gross": null,
         "tax": 14.13,
@@ -540,7 +540,7 @@ export const invoicesData = [{
     },
     {
         "id": 55,
-        "employee__id": 13,
+        "customer__id": 13,
         "net": 168.78,
         "gross": null,
         "tax": 7.74,
@@ -550,7 +550,7 @@ export const invoicesData = [{
     },
     {
         "id": 56,
-        "employee__id": 52,
+        "customer__id": 52,
         "net": 99.07,
         "gross": null,
         "tax": 7.8,
@@ -560,7 +560,7 @@ export const invoicesData = [{
     },
     {
         "id": 57,
-        "employee__id": 95,
+        "customer__id": 95,
         "net": 470.59,
         "gross": null,
         "tax": 14.43,
@@ -570,7 +570,7 @@ export const invoicesData = [{
     },
     {
         "id": 58,
-        "employee__id": 68,
+        "customer__id": 68,
         "net": 138.06,
         "gross": null,
         "tax": 17.35,
@@ -580,7 +580,7 @@ export const invoicesData = [{
     },
     {
         "id": 59,
-        "employee__id": 30,
+        "customer__id": 30,
         "net": 498.89,
         "gross": null,
         "tax": 11.12,
@@ -590,7 +590,7 @@ export const invoicesData = [{
     },
     {
         "id": 60,
-        "employee__id": 92,
+        "customer__id": 92,
         "net": 273.42,
         "gross": null,
         "tax": 9.69,
@@ -600,7 +600,7 @@ export const invoicesData = [{
     },
     {
         "id": 61,
-        "employee__id": 16,
+        "customer__id": 16,
         "net": 402.29,
         "gross": null,
         "tax": 22.14,
@@ -610,7 +610,7 @@ export const invoicesData = [{
     },
     {
         "id": 62,
-        "employee__id": 44,
+        "customer__id": 44,
         "net": 145.59,
         "gross": null,
         "tax": 1.96,
@@ -620,7 +620,7 @@ export const invoicesData = [{
     },
     {
         "id": 63,
-        "employee__id": 3,
+        "customer__id": 3,
         "net": 329.29,
         "gross": null,
         "tax": 17.38,
@@ -630,7 +630,7 @@ export const invoicesData = [{
     },
     {
         "id": 64,
-        "employee__id": 63,
+        "customer__id": 63,
         "net": 430.59,
         "gross": null,
         "tax": 15.83,
@@ -640,7 +640,7 @@ export const invoicesData = [{
     },
     {
         "id": 65,
-        "employee__id": 24,
+        "customer__id": 24,
         "net": 129.97,
         "gross": null,
         "tax": 8.05,
@@ -650,7 +650,7 @@ export const invoicesData = [{
     },
     {
         "id": 66,
-        "employee__id": 65,
+        "customer__id": 65,
         "net": 261.34,
         "gross": null,
         "tax": 21.75,
@@ -660,7 +660,7 @@ export const invoicesData = [{
     },
     {
         "id": 67,
-        "employee__id": 8,
+        "customer__id": 8,
         "net": 408.26,
         "gross": null,
         "tax": 15.76,
@@ -670,7 +670,7 @@ export const invoicesData = [{
     },
     {
         "id": 68,
-        "employee__id": 20,
+        "customer__id": 20,
         "net": 302.17,
         "gross": null,
         "tax": 6.93,
@@ -680,7 +680,7 @@ export const invoicesData = [{
     },
     {
         "id": 69,
-        "employee__id": 91,
+        "customer__id": 91,
         "net": 268.51,
         "gross": null,
         "tax": 4.79,
@@ -690,7 +690,7 @@ export const invoicesData = [{
     },
     {
         "id": 70,
-        "employee__id": 99,
+        "customer__id": 99,
         "net": 243.25,
         "gross": null,
         "tax": 7.99,
@@ -700,7 +700,7 @@ export const invoicesData = [{
     },
     {
         "id": 71,
-        "employee__id": 41,
+        "customer__id": 41,
         "net": 96.91,
         "gross": null,
         "tax": 4.09,
@@ -710,7 +710,7 @@ export const invoicesData = [{
     },
     {
         "id": 72,
-        "employee__id": 56,
+        "customer__id": 56,
         "net": 483.4,
         "gross": null,
         "tax": 9.54,
@@ -720,7 +720,7 @@ export const invoicesData = [{
     },
     {
         "id": 73,
-        "employee__id": 98,
+        "customer__id": 98,
         "net": 421.39,
         "gross": null,
         "tax": 17.69,
@@ -730,7 +730,7 @@ export const invoicesData = [{
     },
     {
         "id": 74,
-        "employee__id": 81,
+        "customer__id": 81,
         "net": 474.17,
         "gross": null,
         "tax": 9.37,
@@ -740,7 +740,7 @@ export const invoicesData = [{
     },
     {
         "id": 75,
-        "employee__id": 6,
+        "customer__id": 6,
         "net": 467.93,
         "gross": null,
         "tax": 20.66,
@@ -750,7 +750,7 @@ export const invoicesData = [{
     },
     {
         "id": 76,
-        "employee__id": 56,
+        "customer__id": 56,
         "net": 87.29,
         "gross": null,
         "tax": 10.28,
@@ -760,7 +760,7 @@ export const invoicesData = [{
     },
     {
         "id": 77,
-        "employee__id": 70,
+        "customer__id": 70,
         "net": 127.12,
         "gross": null,
         "tax": 22.67,
@@ -770,7 +770,7 @@ export const invoicesData = [{
     },
     {
         "id": 78,
-        "employee__id": 43,
+        "customer__id": 43,
         "net": 422.21,
         "gross": null,
         "tax": 20.37,
@@ -780,7 +780,7 @@ export const invoicesData = [{
     },
     {
         "id": 79,
-        "employee__id": 65,
+        "customer__id": 65,
         "net": 115.0,
         "gross": null,
         "tax": 1.2,
@@ -790,7 +790,7 @@ export const invoicesData = [{
     },
     {
         "id": 80,
-        "employee__id": 56,
+        "customer__id": 56,
         "net": 165.98,
         "gross": null,
         "tax": 15.45,
@@ -800,7 +800,7 @@ export const invoicesData = [{
     },
     {
         "id": 81,
-        "employee__id": 29,
+        "customer__id": 29,
         "net": 280.08,
         "gross": null,
         "tax": 15.64,
@@ -810,7 +810,7 @@ export const invoicesData = [{
     },
     {
         "id": 82,
-        "employee__id": 66,
+        "customer__id": 66,
         "net": 135.27,
         "gross": null,
         "tax": 7.8,
@@ -820,7 +820,7 @@ export const invoicesData = [{
     },
     {
         "id": 83,
-        "employee__id": 19,
+        "customer__id": 19,
         "net": 465.45,
         "gross": null,
         "tax": 12.69,
@@ -830,7 +830,7 @@ export const invoicesData = [{
     },
     {
         "id": 84,
-        "employee__id": 8,
+        "customer__id": 8,
         "net": 337.18,
         "gross": null,
         "tax": 6.97,
@@ -840,7 +840,7 @@ export const invoicesData = [{
     },
     {
         "id": 85,
-        "employee__id": 21,
+        "customer__id": 21,
         "net": 301.21,
         "gross": null,
         "tax": 14.39,
@@ -850,7 +850,7 @@ export const invoicesData = [{
     },
     {
         "id": 86,
-        "employee__id": 14,
+        "customer__id": 14,
         "net": 73.78,
         "gross": null,
         "tax": 7.06,
@@ -860,7 +860,7 @@ export const invoicesData = [{
     },
     {
         "id": 87,
-        "employee__id": 25,
+        "customer__id": 25,
         "net": 402.56,
         "gross": null,
         "tax": 18.81,
@@ -870,7 +870,7 @@ export const invoicesData = [{
     },
     {
         "id": 88,
-        "employee__id": 23,
+        "customer__id": 23,
         "net": 75.99,
         "gross": null,
         "tax": 4.34,
@@ -880,7 +880,7 @@ export const invoicesData = [{
     },
     {
         "id": 89,
-        "employee__id": 99,
+        "customer__id": 99,
         "net": 130.4,
         "gross": null,
         "tax": 22.96,
@@ -890,7 +890,7 @@ export const invoicesData = [{
     },
     {
         "id": 90,
-        "employee__id": 34,
+        "customer__id": 34,
         "net": 72.87,
         "gross": null,
         "tax": 9.34,
@@ -900,7 +900,7 @@ export const invoicesData = [{
     },
     {
         "id": 91,
-        "employee__id": 40,
+        "customer__id": 40,
         "net": 334.19,
         "gross": null,
         "tax": 15.36,
@@ -910,7 +910,7 @@ export const invoicesData = [{
     },
     {
         "id": 92,
-        "employee__id": 80,
+        "customer__id": 80,
         "net": 125.88,
         "gross": null,
         "tax": 2.04,
@@ -920,7 +920,7 @@ export const invoicesData = [{
     },
     {
         "id": 93,
-        "employee__id": 88,
+        "customer__id": 88,
         "net": 451.08,
         "gross": null,
         "tax": 1.53,
@@ -930,7 +930,7 @@ export const invoicesData = [{
     },
     {
         "id": 94,
-        "employee__id": 100,
+        "customer__id": 100,
         "net": 444.5,
         "gross": null,
         "tax": 15.65,
@@ -940,7 +940,7 @@ export const invoicesData = [{
     },
     {
         "id": 95,
-        "employee__id": 43,
+        "customer__id": 43,
         "net": 131.86,
         "gross": null,
         "tax": 11.1,
@@ -950,7 +950,7 @@ export const invoicesData = [{
     },
     {
         "id": 96,
-        "employee__id": 94,
+        "customer__id": 94,
         "net": 415.5,
         "gross": null,
         "tax": 4.52,
@@ -960,7 +960,7 @@ export const invoicesData = [{
     },
     {
         "id": 97,
-        "employee__id": 100,
+        "customer__id": 100,
         "net": 443.79,
         "gross": null,
         "tax": 12.15,
@@ -970,7 +970,7 @@ export const invoicesData = [{
     },
     {
         "id": 98,
-        "employee__id": 89,
+        "customer__id": 89,
         "net": 320.35,
         "gross": null,
         "tax": 2.2,
@@ -980,7 +980,7 @@ export const invoicesData = [{
     },
     {
         "id": 99,
-        "employee__id": 26,
+        "customer__id": 26,
         "net": 441.62,
         "gross": null,
         "tax": 15.96,
@@ -990,7 +990,7 @@ export const invoicesData = [{
     },
     {
         "id": 100,
-        "employee__id": 30,
+        "customer__id": 30,
         "net": 435.25,
         "gross": null,
         "tax": 6.36,

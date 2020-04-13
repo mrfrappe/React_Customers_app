@@ -15,80 +15,82 @@ const Form = ({edit, object}) => {
             {(context) => (
                     editMode === true ? (
                         <div className={styles.wrapper__edit}>
-                            <Title title="Edit employee"/>
+                            <Title title="Edit customer"/>
                             <form className={styles.form} 
-                                  onSubmit={context.onEditItem} 
-                                  data-employee-id={object.employeeObject.id}>
+                                  onSubmit={(e) => context.onEditItem(e, object)} 
+                                  data-customer-id={object.customerObject.id}>
                                 <Input 
                                     name="first_name"
                                     text="First name"
-                                    value={object.employeeObject.first_name}
+                                    value={object.customerObject.first_name}
                                 />
                                 <Input 
                                     name="last_name"
                                     text="Last name"
-                                    value={object.employeeObject.last_name}
+                                    value={object.customerObject.last_name}
                                 />
                                 <Input 
                                     name="email"
                                     text="Email"
-                                    value={object.employeeObject.email}
+                                    value={object.customerObject.email}
                                 />
                                 <Input 
                                     name="gender"
                                     text="Gender"
-                                    value={object.employeeObject.gender}
+                                    value={object.customerObject.gender}
                                 />
                                 <Input 
                                     name="company"
                                     text="Company"
-                                    value={object.employeeDetailsObject.company}
+                                    value={object.customerDetailsObject.company}
                                 />
                                 <Input 
                                     name="address"
                                     text="Address"
-                                    value={object.employeeDetailsObject.address}
+                                    value={object.customerDetailsObject.address}
                                 />
                                 <Input 
                                     name="city"
                                     text="City"
-                                    value={object.employeeDetailsObject.city}
+                                    value={object.customerDetailsObject.city}
                                 />
                                 <Input 
                                     name="country"
                                     text="Country"
-                                    value={object.employeeDetailsObject.country}
+                                    value={object.customerDetailsObject.country}
                                 />
                                 <Input 
                                     name="iban"
                                     text="Iban"
-                                    value={object.employeeDetailsObject.iban}
+                                    value={object.customerDetailsObject.iban}
                                 />
                                 <Input 
                                     name="currency"
                                     text="Currency"
-                                    value={object.employeeDetailsObject.currency}
+                                    value={object.customerDetailsObject.currency}
+                                    disabled={true}
+
                                 />
                                 <Input 
                                     name="create_at"
                                     text="create_at"
-                                    value={object.employeeDetailsObject.create_at}
+                                    value={object.customerDetailsObject.create_at}
                                     disabled={true}
                                 />
                                 <Input 
                                     name="update_at"
                                     text="update_at"
-                                    value={object.employeeDetailsObject.update_at}
+                                    value={object.customerDetailsObject.update_at}
                                     disabled={true}
 
                                 />
-                                <Button tag="button" additionalClass="xl">Save </Button>
+                                <Button tag="button" secondary="true">Save </Button>
                             </form>
                         </div>
                     ) : (
                         
                         <div className={styles.wrapper}>
-                        <Title title="Add new employee"/>
+                        <Title title="Add new customer"/>
                         <form className={styles.form} onSubmit={context.onAddItem}>
                             <Input 
                                 name="first_name"
@@ -106,7 +108,7 @@ const Form = ({edit, object}) => {
                                 name="gender"
                                 text="Gender"
                             />
-                            <Button tag="button" additionalClass="xl">New employee </Button>
+                            <Button tag="button" secondary="true" >New customer </Button>
                         </form>
                     </div>
                     )

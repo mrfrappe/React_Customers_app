@@ -5,86 +5,118 @@ import Title from '../../components/Title/Title';
 import Form from '../../components/Form/Form';
 import Button from '../../components/Button/Button';
 import Thumb from '../../components/Thumb/Thumb';
+import Modal from '../../components/Modal/Modal';
 import Navigator from '../../components/Navigator/Navigator';
 import List from '../../components/InvoicesList/List';
-import { employeesDetailsData } from '../../assets/data/employeesData';
-let employeeObject = {};
-let employeeDetailsObject = {};
+import getSymbolFromCurrency from 'currency-symbol-map'
+
+let customerObject = {};
+let customerDetailsObject = {};
 let invoicesCollection = {};
+let currencySign = '';
 
 const DetailsView = () => {
 
-    const employeeId = Number.parseInt(window.location.href.substr(window.location.href.lastIndexOf(":") + 1, window.location.href.length ));
-
+    const customerId = Number.parseInt(window.location.href.substr(window.location.href.lastIndexOf(":") + 1, window.location.href.length ));
 
     return (
-        <>
-        <Navigator />
-        <AppContext.Consumer>
-            {(context) => (
-                <>
-                {
-                getEmployeeObject(context.items, employeeId),
 
-                getEmployeeDetails(context.itemsDetails, 
-                    employeeId),
+            <div className={styles.wrapper}>
+            <Navigator />
+            <AppContext.Consumer>
+                {(context) => (
+                    <div className={styles.wrapper}>
+                    {
+                    getcustomerObject(context.items, customerId),
+    
+                    getcustomerDetails(context.itemsDetails, 
+                        customerId),
+    
+                    getCustomersInvoices(context.invoicesData, customerId)
+                    }
 
-                getEmployeesInvoices(context.invoicesData, employeeId)
-                }
-
-                <div className={styles.wrapper}>
-                    <Title title={employeeObject.first_name + ' ' + employeeObject.last_name + ' ID[' + employeeObject.id + ']'}></Title>
-                    <div className={styles.wrapper__content}>
-                        <div className={styles.wrapper__thumb}>
-                            <Thumb/>
-                            <Button tag='button' additionalClass="xl red" clickFn={context.onDeleteItem}>Delete</Button>
+                    {customerObject != undefined && customerDetailsObject != undefined ? 
+                    (
+                        <>
+                    <>
+                        <Title title={customerObject.first_name + ' ' + customerObject.last_name + ' ID[' + customerObject.id + ']'}></Title>
+                        <div className={styles.wrapper__content}>
+                            <div className={styles.wrapper__thumb}>
+                                <Thumb/>
+                                <Button tag='button' secondary="true" onClick={(e) => context.onModalOpen(e, customerId)}>Delete</Button>
+                            </div>
+                            <Form edit="true" object={{customerObject, customerDetailsObject}}/>
                         </div>
-                        <Form edit="true" object={{employeeObject, employeeDetailsObject}}/>
-                    </div>
-                    <Title title="Invoices"></Title>
-                    <div className={styles.wrapper__content}>
-                        <List items={invoicesCollection}></List>
-                    </div>
-                </div>
-                </>
-            )}
-        </AppContext.Consumer>
-        </>
+                        <Title title="Invoices"></Title>
+                        {/* <Button tag='button'  secondary="true" onClick={(e) => context.onAddInvoice(e, customerId)}>Add invoice</Button> */}
+                        <div className={styles.wrapper__content}>
+                            {(context.isModalOpen == true && context.isAlert == false) ? 
+                            <Modal id={customerId}/>
+                                :
+                                    <>
+                                    </>
+                            }
+                            <List items={invoicesCollection} currencySign={currencySign}></List>
+                        </div>
+                    </>
+                    {(context.isModalOpen == true && context.isAlert == true) ? 
+                        (<Modal id={customerId}/>)
+                        :
+                        (
+                            <>
+                            </>
+                        )}
+                    
+                    </>
+                    ):(
+                        <div className={styles.wrapper__info}>
+                            <div className={styles.wrapper__infoText}>
+                                customer was deleted.
+                            </div>
+                        </div>
+                    )}
+            </div>
+                )}
+            </AppContext.Consumer>
+            </div>
+
+
 
     )
 }
 
-const getEmployeeObject = (employeeList, employeeId) => {
+const getcustomerObject = (customerList, customerId) => {
     // return new Promise((resolve, reject) => {
-    //     let object = employeeList.find(item => item.id === employeeId);
+    //     let object = customerList.find(item => item.id === customerId);
 
     //     if (object){
     //         resolve(object)
     //     }
 
-    //     reject(new Error("Employee don't exist"));
+    //     reject(new Error("customer don't exist"));
     // });
-    employeeObject = employeeList.find(item => item.id === employeeId);
+    customerObject = customerList.find(item => item.id === customerId);
     
 }
-const getEmployeeDetails = (employeeDetailsLit, 
-employeeId) => {
+const getcustomerDetails = (customerDetailsLit, 
+customerId) => {
             // return new Promise((resolve, reject) => {
-    //     let object = employeeDetailsLit.find(item => item.id === employeeId);
+    //     let object = customerDetailsLit.find(item => item.id === customerId);
 
     //     if (object){
     //         resolve(object)
     //     }
 
-    //     reject(new Error("Employee details don't exist"));
+    //     reject(new Error("customer details don't exist"));
     // });
-    employeeDetailsObject = employeeDetailsLit.find(item => item.id === employeeId);
+    customerDetailsObject = customerDetailsLit.find(item => item.id === customerId);
+    currencySign = (customerDetailsObject) ? getSymbolFromCurrency(customerDetailsObject.currency_code) : '';
 
 }
-const getEmployeesInvoices = (invoicesList, employeeId) => {
-    console.log(invoicesList, employeeId)
+const getCustomersInvoices = (invoicesList, customerId) => {
+    console.log(invoicesList, customerId)
 
-    invoicesCollection = invoicesList.filter(item => item.employee__id === employeeId);
+    invoicesCollection = invoicesList.filter(item => item.customer__id === customerId);
     console.log(invoicesCollection)
 }
 
