@@ -6,7 +6,7 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 
 
-const Form = ({edit, object}) => {
+const Form = ({edit, object, objectType}) => {
     let editMode = (edit) ? true : false;
 
 
@@ -88,29 +88,60 @@ const Form = ({edit, object}) => {
                             </form>
                         </div>
                     ) : (
-                        
+                        objectType == 'invoice' ?
+                        (
+                            <div className={styles.wrapper}>
+                                <Title title="Add new invoice"/>
+                                <form className={styles.form} onSubmit={context.onAddInvoice}>
+                                    <Input 
+                                        name="net"
+                                        text="Netto"
+                                    />
+                                    <Input 
+                                        name="gross"
+                                        text="Gross"
+                                    />
+                                     <Input 
+                                        name="tax"
+                                        text="Tax"
+                                    />
+                                    <Input 
+                                        name="total"
+                                        text="Total"
+                                    />
+                                    <Input 
+                                        name="payed"
+                                        text="Payed"
+                                    />
+                                    <Button tag="button" onClick={context.onModalInvoiceToggle}>Cancel</Button><Button tag="button" secondary="true" onClick={(e) => context.onAddInvoice(e)}>Add invoice</Button>
+
+                                </form>
+                            </div>
+                        ) :
+                        (
                         <div className={styles.wrapper}>
-                        <Title title="Add new customer"/>
-                        <form className={styles.form} onSubmit={context.onAddItem}>
-                            <Input 
-                                name="first_name"
-                                text="First name"
-                            />
-                            <Input 
-                                name="last_name"
-                                text="Last name"
-                            />
-                            <Input 
-                                name="email"
-                                text="Email"
-                            />
-                            <Input 
-                                name="gender"
-                                text="Gender"
-                            />
-                            <Button tag="button" secondary="true" >New customer </Button>
-                        </form>
-                    </div>
+                            <Title title="Add new customer"/>
+                            <form className={styles.form} onSubmit={context.onAddItem}>
+                                <Input 
+                                    name="first_name"
+                                    text="First name"
+                                />
+                                <Input 
+                                    name="last_name"
+                                    text="Last name"
+                                />
+                                <Input 
+                                    name="email"
+                                    text="Email"
+                                />
+                                <Input 
+                                    name="gender"
+                                    text="Gender"
+                                />
+                                <Button tag="button" secondary="true" >New customer </Button>
+                            </form>
+                        </div>)
+
                     )
 
 

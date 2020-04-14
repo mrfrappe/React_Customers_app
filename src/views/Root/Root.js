@@ -16,7 +16,7 @@ class Root extends React.Component {
     itemsDetails: [...details],
     invoicesData: [...invoices],
     isModalOpen: false,
-    isAlert: true,
+    isModalInvoiceOpen: false,
   }
 
   onAddItem = (e) => {
@@ -113,7 +113,6 @@ class Root extends React.Component {
 
   onModalOpen = (e) => {
     e.preventDefault();
-
     this.setState(prevState => ({
       isModalOpen: true}));
 
@@ -126,6 +125,20 @@ class Root extends React.Component {
 
   };
 
+  onModalInvoiceToggle = (e) => {
+    e.preventDefault();
+    switch(this.state.isModalInvoiceOpen) {
+      case true:
+        this.setState(prevState => ({
+          isModalInvoiceOpen: false}));
+        break;
+      case false:
+        this.setState(prevState => ({
+          isModalInvoiceOpen: true}));
+        break;
+    }
+  }
+
   render() {
 
     const contextElement = {
@@ -135,6 +148,8 @@ class Root extends React.Component {
       onDeleteItem: this.onDeleteItem,
       onModalOpen: this.onModalOpen,
       onModalClose: this.onModalClose,
+      onAddInvoice: this.onAddInvoice,
+      onModalInvoiceToggle: this.onModalInvoiceToggle
 
     }
     return (

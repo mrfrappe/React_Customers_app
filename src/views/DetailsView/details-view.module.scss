@@ -12,6 +12,9 @@
         margin-bottom: 20px;
 
     }
+    &__row {
+        display: flex;
+    }
     &__thumb {
         display: flex;
         flex-direction: column;;

@@ -37,35 +37,29 @@ const DetailsView = () => {
 
                     {customerObject != undefined && customerDetailsObject != undefined ? 
                     (
-                        <>
                     <>
-                        <Title title={customerObject.first_name + ' ' + customerObject.last_name + ' ID[' + customerObject.id + ']'}></Title>
-                        <div className={styles.wrapper__content}>
-                            <div className={styles.wrapper__thumb}>
-                                <Thumb/>
-                                <Button tag='button' secondary="true" onClick={(e) => context.onModalOpen(e, customerId)}>Delete</Button>
+                            <Title title={customerObject.first_name + ' ' + customerObject.last_name + ' ID[' + customerObject.id + ']'}></Title>
+                            <div className={styles.wrapper__content}>
+                                <div className={styles.wrapper__thumb}>
+                                    <Thumb/>
+                                    <Button tag='button' secondary="true" onClick={(e) => context.onModalOpen(e, customerId)}>Delete</Button>
+                                </div>
+                                <Form edit="true" object={{customerObject, customerDetailsObject}}/>
                             </div>
-                            <Form edit="true" object={{customerObject, customerDetailsObject}}/>
-                        </div>
-                        <Title title="Invoices"></Title>
-                        {/* <Button tag='button'  secondary="true" onClick={(e) => context.onAddInvoice(e, customerId)}>Add invoice</Button> */}
-                        <div className={styles.wrapper__content}>
-                            {(context.isModalOpen == true && context.isAlert == false) ? 
-                            <Modal id={customerId}/>
-                                :
-                                    <>
-                                    </>
-                            }
-                            <List items={invoicesCollection} currencySign={currencySign}></List>
-                        </div>
-                    </>
-                    {(context.isModalOpen == true && context.isAlert == true) ? 
-                        (<Modal id={customerId}/>)
-                        :
-                        (
-                            <>
-                            </>
-                        )}
+                            <div claaaName={styles.wrapper__header}>
+                                <Title title="Invoices"></Title>
+                                <Button tag='button'  secondary="true" onClick={context.onModalInvoiceToggle}>Add invoice</Button>
+                            </div>
+                            <div className={styles.wrapper__content}>
+                                <List items={invoicesCollection} currencySign={currencySign}></List>
+                            </div>
+                       
+                        {(context.isModalOpen == true) ? 
+                            (<Modal id={customerId} isAlert={true}/>):( <></>)
+                        }
+                        {(context.isModalInvoiceOpen == true) ? 
+                            (<Modal id={customerId} isAlert={false}/>):( <></>)
+                        }
                     
                     </>
                     ):(

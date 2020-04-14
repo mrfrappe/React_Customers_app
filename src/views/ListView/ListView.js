@@ -13,6 +13,8 @@ const ListView = () => {
                 <div className={styles.wrapper}>
                     <List items={context.items}/>
                     <Form/>
+                    {/* <Form edit={false} objectType={'invoice'}/> */}
+
                 </div>
     )}
         </AppContext.Consumer>
