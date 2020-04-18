@@ -16,7 +16,7 @@ const Modal = ({id, isAlert}) => {
                     <div className={styles.modal}>
                         <Title title="Alert"></Title>
                         <div className={styles.modal__content}>
-                            customer will be delete. Are you sure?
+                            Customer will be delete. Are you sure?
                         </div>
                         <div className={styles.modal__footer}>
                         <Button tag="button" onClick={context.onModalClose}>Cancel</Button><Button tag="button" onClick={(e) => context.onDeleteItem(e, id)}>Delete</Button>
@@ -30,7 +30,7 @@ const Modal = ({id, isAlert}) => {
                 <div className={styles.wrapper__invoice}>
                     <div className={styles.modal}>
                         <div className={styles.modal__content}>
-                            <Form edit={false} objectType={'invoice'}/>
+                            <Form mode="add" type={'invoice'} view="modal" id={id}/>
                         </div>
                         <div className={styles.modal__footer}>
                         </div>

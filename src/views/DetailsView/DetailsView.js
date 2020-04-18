@@ -21,7 +21,7 @@ const DetailsView = () => {
 
     return (
 
-            <div className={styles.wrapper}>
+            <>
             <Navigator />
             <AppContext.Consumer>
                 {(context) => (
@@ -39,18 +39,20 @@ const DetailsView = () => {
                     (
                     <>
                             <Title title={customerObject.first_name + ' ' + customerObject.last_name + ' ID[' + customerObject.id + ']'}></Title>
-                            <div className={styles.wrapper__content}>
-                                <div className={styles.wrapper__thumb}>
+                            <div className={styles.wrapper_row}>
+                                <div className={styles.wrapper_col__thumb}>
                                     <Thumb/>
                                     <Button tag='button' secondary="true" onClick={(e) => context.onModalOpen(e, customerId)}>Delete</Button>
                                 </div>
-                                <Form edit="true" object={{customerObject, customerDetailsObject}}/>
+                                <div className={styles.wrapper_col__form}>
+                                    <Form mode="edit" type="customers" object={{customerObject, customerDetailsObject}}/>
+                                </div>
                             </div>
-                            <div claaaName={styles.wrapper__header}>
+                            <div className={styles.wrapper_row}>
                                 <Title title="Invoices"></Title>
                                 <Button tag='button'  secondary="true" onClick={context.onModalInvoiceToggle}>Add invoice</Button>
                             </div>
-                            <div className={styles.wrapper__content}>
+                            <div className={styles.wrapper_row__list}>
                                 <List items={invoicesCollection} currencySign={currencySign}></List>
                             </div>
                        
@@ -64,15 +66,15 @@ const DetailsView = () => {
                     </>
                     ):(
                         <div className={styles.wrapper__info}>
-                            <div className={styles.wrapper__infoText}>
-                                customer was deleted.
+                            <div className={styles.text}>
+                                Customer was deleted.
                             </div>
                         </div>
                     )}
             </div>
                 )}
             </AppContext.Consumer>
-            </div>
+            </>
 
 
 

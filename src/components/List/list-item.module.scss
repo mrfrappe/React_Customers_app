@@ -1,35 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
 
 .listItem {
-    // @extend .row;
-    display: flex;
-    flex-direction: row;
+    @extend .row;
     align-items: center;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding-top: 10px;
+    padding-top: 5px;
     padding-bottom: 10px;
     height: 55px;
-    flex-wrap: nowrap;
-       -moz-user-select: none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   min-width: 420px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 
 
-     &:hover {
-         background-color: #f1f1f1;
-     }
+    &:hover {
+        background-color: #f1f1f1;
+    }
 
     &__image {
         @extend .col-md-2;
-
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding:0px;
 
         img {
             background: url("../../assets/images/member-thumb.png");
@@ -43,79 +32,62 @@
 
     }
 
-    &__content {
-        width: 100%;
-        @extend .row;
-        @extend .col-md-10;
+    &__name {
+        @extend .col-md-3;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
 
+        &_firstname {
+            text-align: left;
+        }
 
+        &_lastname {
+            margin-left: 10px;
 
-        .customerInfo {
+        }
+    }
+
+    &__email {
+        @extend .col-md-3;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__gender {
+        @extend .col-md-2;
+        font-size: 16px;
+
+    }
+
+    &__action {
+        @extend .col-md-2;
+        font-size: 16px;
+
+        .button {
+            width: 100px;
+            height: 25px;
+            border-radius: 20px;
             display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-around;
-            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #168efb;
+            border: 1px solid #167efb;
+            margin-right: 10px;
+            font-size: 16px;
+            cursor: pointer;
 
-            &__name {
-                @extend .col-md-4;
-                font-weight: bold;
-                display: flex;
-                flex-direction: row;
-                font-size: 16px;
-
-                &_firstname {
-                    text-align: left;
-                }
-
-                &_lastname {
-                    margin-left: 10px;
-
-                }
-            }
-
-            &__email {
-                @extend .col-md-4;
-                font-size: 16px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            &__gender {
-                @extend .col-md-2;
-                font-size: 16px;
+            &:hover {
+                background-color: #167efb;
+                color: #fff;
 
             }
 
-            &__action {
-                @extend .col-md-2;
-                font-size: 16px;
-
-                .button {
-                    width: 100px;
-                    height: 25px;
-                    border-radius: 20px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-weight: bold;
-                    color: #168efb;
-                    border: 1px solid #167efb;
-                    margin-right: 10px;
-                    font-size: 16px;
-                    cursor: pointer;
-        
-                    &:hover {
-                        background-color: #167efb;
-                        color: #fff;
-        
-                    }
-        
-                    &__disabled {}
-                }
-            }
-
+            &__disabled {}
         }
     }
 }

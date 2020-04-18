@@ -2,7 +2,15 @@
 
 
 .wrapper {
-    @extend .row;
     display: flex;
-    flex-direction: column;
+
+    &__list {
+        flex-grow: 4;
+        padding-top: 20px;
+    
+    }
+    &__forms {
+        flex-grow: 1;
+
+    }
 }

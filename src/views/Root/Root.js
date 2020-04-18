@@ -51,12 +51,12 @@ class Root extends React.Component {
     e.preventDefault();
 
     var newItem = {
-      id: '',
-      customer__id: customerId,
-      net: '',
-      gross: '',
-      tax: '',
-      total: '',
+      id: this.state.invoicesData.length + 1,
+      customer__id: (customerId)? customerId : e.target[0].value,
+      net: e.target[1].value,
+      gross: e.target[2].value,
+      tax: e.target[3].value,
+      total: e.target[4].value,
       create_at: moment().format('D/MM/YYYY'),
       payed: false
     }
@@ -64,6 +64,9 @@ class Root extends React.Component {
     this.setState(prevState => ({
       invoicesData : [...prevState.invoicesData, newItem]
     }));
+
+    e.target.reset();
+    this.onModalInvoiceToggle();
 
   };
 

@@ -1,19 +1,8 @@
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
 
 .wrapper {
-    @extend .col-lg-8;
-    margin-top: 20px;
-    // max-width: 200px;
+
     .list {
-        padding: 0;
-    }
-}
-
-
-@media (max-width: 1020px) {
-    .wrapper {
-        position: absolute;
-        top: 250px;
-        max-width: 100%;;
+        padding: 0 50px;
     }
 }
