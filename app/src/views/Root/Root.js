@@ -1,20 +1,24 @@
 import React from 'react';
-import Button from '../../components/atoms/Button/Button';
-import GlobalStyle from '../../themes/GlobalStyle';
-import {ThemeProvider} from 'styled-components';
-import {theme} from '../../themes/mainTheme';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import MainTemplete from '../../templates/MainTemplate';
+import Customer from '../Customer/Customer';
+import Invoice from '../Invoice/Invoice';
+import Reminder from '../Reminder/Reminder';
+import Dashboard from '../Dashboard/Dashboard';
 
 function Root() {
   return (
     <>
-    <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <>
-          <h1>New app</h1>
-          <Button>Button</Button>
-          <Button secondary>Button</Button>
-        </>
-      </ThemeProvider>
+      <BrowserRouter>
+        <MainTemplete>
+          <Switch>
+            <Route exact path="/" component={Dashboard}></Route>
+            <Route path="/customers" component={Customer}></Route>
+            <Route path="/reminders" component={Reminder}></Route>
+            <Route path="/invoices" component={Invoice}></Route>
+          </Switch>
+        </MainTemplete>
+      </BrowserRouter>
     </>
   );
 }
