@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faUsers } from '@fortawesome/free-solid-svg-icons';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 
 const StyledWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -53,7 +53,9 @@ const UlWrapper = styled.ul`
 const Menu = () => {
   return (
     <StyledWrapper>
-      <p>Logo</p>
+      <ButtonIcon as={Link} to="/dashboard">
+        <FontAwesomeIcon icon={faUsers} />
+      </ButtonIcon>
       <UlWrapper>
         <li>
           <Link to="/">Dashboard</Link>

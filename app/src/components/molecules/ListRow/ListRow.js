@@ -1,8 +1,7 @@
 /* eslint-disable camelcase */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEdit } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
@@ -11,30 +10,51 @@ import Thumb from '../../atoms/Thumb/Thumb';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 
-const StyledWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+const StyledTr = styled.tr`
   :hover {
     background: #f1f1f1;
   }
 `;
 
-const ListRow = ({ id, thumb, first_name, last_name, comapny, country }) => {
+const StyledTd = styled.td`
+  height: 40px;
+  text-align: center;
+
+  ${({ centered }) =>
+    centered &&
+    css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `}
+`;
+
+const ListRow = ({ id, thumb, first_name, last_name, company, country }) => {
   return (
-    <StyledWrapper>
-      <Thumb>
-        <FontAwesomeIcon icon={faUser} />
-      </Thumb>
-      <Paragraph>{first_name}</Paragraph>
-      <Paragraph>{last_name}</Paragraph>
-      <Paragraph> {comapny}</Paragraph>
-      <Paragraph> {country}</Paragraph>
-      <ButtonIcon as={Link} to={`/details/:${id}`}>
-        <FontAwesomeIcon icon={faEdit} />
-      </ButtonIcon>
-    </StyledWrapper>
+    <StyledTr>
+      <StyledTd centered>
+        <Thumb>
+          <FontAwesomeIcon icon={faUser} />
+        </Thumb>
+      </StyledTd>
+      <StyledTd>
+        <Paragraph>{first_name}</Paragraph>
+      </StyledTd>
+      <StyledTd>
+        <Paragraph>{last_name}</Paragraph>
+      </StyledTd>
+      <StyledTd>
+        <Paragraph>{company}</Paragraph>
+      </StyledTd>
+      <StyledTd>
+        <Paragraph> {country}</Paragraph>
+      </StyledTd>
+      <StyledTd centered>
+        <ButtonIcon as={Link} to={`/details/:${id}`}>
+          <FontAwesomeIcon icon={faEdit} />
+        </ButtonIcon>
+      </StyledTd>
+    </StyledTr>
   );
 };
 ListRow.propTypes = {
@@ -42,7 +62,7 @@ ListRow.propTypes = {
   thumb: PropTypes.element.isRequired,
   first_name: PropTypes.element.isRequired,
   last_name: PropTypes.element.isRequired,
-  comapny: PropTypes.element.isRequired,
+  company: PropTypes.element.isRequired,
   country: PropTypes.element.isRequired,
 };
 

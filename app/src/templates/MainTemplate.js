@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../themes/GlobalStyle';
 import { theme } from '../themes/mainTheme';
-import Main from '../components/organisms/Menu/Menu';
+import Menu from '../components/organisms/Menu/Menu';
 
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 // eslint-disable-next-line no-unused-vars
 const MainTempalte = ({ children }) => {
   return (
@@ -12,10 +16,10 @@ const MainTempalte = ({ children }) => {
       <GlobalStyle />
 
       <ThemeProvider theme={theme}>
-        <>
+        <StyledWrapper>
           {children}
-          <Main></Main>
-        </>
+          <Menu></Menu>
+        </StyledWrapper>
       </ThemeProvider>
     </>
   );
