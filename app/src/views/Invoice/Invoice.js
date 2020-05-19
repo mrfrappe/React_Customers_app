@@ -9,11 +9,13 @@ const StyledWrapper = styled.div`
   padding-left: 170px;
 `;
 
+const headers = ['Number', 'Title', 'Start at', 'Finish at', 'Payed', 'Customer', 'Action'];
+
 const Invoice = ({ invoices }) => {
   return (
     <StyledWrapper>
       <Header>Invoices</Header>
-      <List items={invoices}></List>
+      <List items={invoices} headers={headers}></List>
     </StyledWrapper>
   );
 };

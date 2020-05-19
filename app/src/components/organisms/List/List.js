@@ -11,17 +11,21 @@ const StyledTable = styled.table`
   border-spacing: 0;
 `;
 
-const List = ({ items }) => {
+const StyledTh = styled.th`
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+`;
+
+const List = ({ items, headers }) => {
   return (
     <StyledTable>
       <thead>
         <tr>
-          <th></th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Company</th>
-          <th>Country</th>
-          <th>Action</th>
+          {headers.map(header => (
+            <StyledTh>{header}</StyledTh>
+          ))}
         </tr>
       </thead>
       <tbody>
@@ -41,6 +45,7 @@ const List = ({ items }) => {
 };
 List.propTypes = {
   items: PropTypes.element.isRequired,
+  headers: PropTypes.element.isRequired,
 };
 
 export default List;

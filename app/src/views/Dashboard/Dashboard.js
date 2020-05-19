@@ -6,6 +6,7 @@ import Header from '../../components/atoms/Header/Header';
 
 const StyledWrapper = styled.div`
   padding-left: 170px;
+  padding-right: 20px;
 `;
 
 const StyledHeader = styled.div`
@@ -20,6 +21,8 @@ const StyledContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
 `;
 
 const InfoBox = styled.div`
@@ -31,6 +34,9 @@ const InfoBox = styled.div`
   align-items: center;
   font-weight: bold;
   border-radius: 8px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
 `;
 
 const Dashborad = ({ customers, invoices, reminders }) => {

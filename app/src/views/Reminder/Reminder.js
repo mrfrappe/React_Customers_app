@@ -9,11 +9,13 @@ const StyledWrapper = styled.div`
   padding-left: 170px;
 `;
 
+const headers = ['Title', 'Start at', 'Finish at', 'Description', 'Action'];
+
 const Reminder = ({ reminders }) => {
   return (
     <StyledWrapper>
       <Header>Reminder</Header>
-      <List items={reminders}></List>
+      <List items={reminders} headers={headers}></List>
     </StyledWrapper>
   );
 };

@@ -18,7 +18,7 @@ function Root() {
             <Route exact path="/" component={Dashboard}></Route>
             <Route exact path="/customers" component={Customer}></Route>
             <Route path="/customers/:id" component={Details}></Route>
-            <Route exact exaxt path="/reminders" component={Reminder}></Route>
+            <Route exaxt path="/reminders" component={Reminder}></Route>
             <Route path="/reminders/:id" component={Reminder}></Route>
             <Route exact path="/invoices" component={Invoice}></Route>
             <Route path="/invoices:id" component={Invoice}></Route>

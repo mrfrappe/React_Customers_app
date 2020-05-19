@@ -17,7 +17,6 @@ const StyledWrapper = styled.div`
   background: #167efb;
   height: 100%;
   color: #ffffff;
-  font-family: 'Roboto', sans-serif;
 
   p {
     user-select: none;
@@ -29,6 +28,10 @@ const StyledWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: bold;
   }
   a svg {
     transform: scale(2);
@@ -40,6 +43,10 @@ const UlWrapper = styled.ul`
   flex-direction: column;
   list-style-type: none;
   padding: 0;
+
+  li {
+    margin: 15px 00px;
+  }
 
   a {
     text-decoration: none;
@@ -53,7 +60,7 @@ const UlWrapper = styled.ul`
 const Menu = () => {
   return (
     <StyledWrapper>
-      <ButtonIcon as={Link} to="/dashboard">
+      <ButtonIcon mainMenu as={Link} to="/dashboard">
         <FontAwesomeIcon icon={faUsers} />
       </ButtonIcon>
       <UlWrapper>

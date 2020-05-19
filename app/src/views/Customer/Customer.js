@@ -9,11 +9,13 @@ const StyledWrapper = styled.div`
   padding-left: 170px;
 `;
 
+const headers = [' ', 'First Name', 'Last name', 'Company', 'Country', 'Action'];
+
 const Customer = ({ customers }) => {
   return (
     <StyledWrapper>
       <Header>Customer</Header>
-      <List items={customers}></List>
+      <List items={customers} headers={headers}></List>
     </StyledWrapper>
   );
 };

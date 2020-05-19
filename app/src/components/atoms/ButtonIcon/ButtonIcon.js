@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ButtonIcon = styled.button`
   height: 30px;
@@ -15,6 +15,28 @@ const ButtonIcon = styled.button`
     color: ${({ theme }) => theme.primary};
     background: #ffffff;
   }
+  ${({ secondary }) =>
+    secondary &&
+    css`
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      -webkit-box-shadow: 0px 0px 61px 70px rgba(255, 255, 255, 1);
+      -moz-box-shadow: 0px 0px 61px 70px rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 61px 70px rgba(255, 255, 255, 1);
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+    `}
+
+  ${({ mainMenu }) =>
+    mainMenu &&
+    css`
+      :hover {
+        color: #ffffff;
+        background: ${({ theme }) => theme.primary};
+      }
+    `}
 `;
 
 export default ButtonIcon;
