@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Header from '../../components/atoms/Header/Header';
+import List from '../../components/organisms/List/List';
 
 const StyledWrapper = styled.div`
   padding-left: 170px;
@@ -20,9 +21,9 @@ const StyledHeader = styled.div`
 const StyledContent = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-family: 'Roboto', sans-serif;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 const InfoBox = styled.div`
@@ -37,6 +38,25 @@ const InfoBox = styled.div`
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: bold;
+`;
+
+const RemindersSection = styled.div`
+  width: 50%;
+  height: 400px;
+`;
+
+const InvoicesSection = styled.div`
+  width: 50%;
+  border-left: 1px solid #ccc;
+  height: 400px;
+`;
+const CircleChart = styled.div`
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: #167efb;
+  position: absolute;
+  right: 15%;
 `;
 
 const Dashborad = ({ customers, invoices, reminders }) => {
@@ -57,7 +77,23 @@ const Dashborad = ({ customers, invoices, reminders }) => {
           <div>{reminders.length}</div>
         </InfoBox>
       </StyledHeader>
-      <StyledContent>TO DO CHARTS</StyledContent>
+      <StyledContent>
+        <RemindersSection>
+          <Header>Reminders</Header>
+          <List
+            items={reminders}
+            headers={['Title', 'Start at', 'Finish at', 'Description']}
+          ></List>
+        </RemindersSection>
+        <InvoicesSection>
+          <Header>Invoices</Header>
+          <List
+            items={invoices}
+            headers={['Number', 'Title', 'Start at', 'Finish at', 'Customer']}
+          ></List>
+        </InvoicesSection>
+      </StyledContent>
+      {/* <CircleChart></CircleChart> */}
     </StyledWrapper>
   );
 };

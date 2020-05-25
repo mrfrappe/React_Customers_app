@@ -4,18 +4,17 @@ import Input from '../../atoms/Input/Input';
 import Label from '../../atoms/Label/Label';
 
 const StyledWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
-const FormInput = () =>{
-    return (
-        <StyledWrapper>
-            <Label>Test</Label>
-            <Input placeholder="Test"></Input>
-        </StyledWrapper>
-    )
-
+const FormInput = ({ label, inputType }) => {
+  return (
+    <StyledWrapper>
+      <Label>{label}</Label>
+      <Input width="300px" placeholder={inputType} type={inputType}></Input>
+    </StyledWrapper>
+  );
 };
 
 export default FormInput;

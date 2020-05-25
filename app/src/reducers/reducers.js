@@ -9,7 +9,29 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log(state, action);
+  console.log(state.customers);
+  switch (action.type) {
+    case 'REMOVE_ITEM':
+      return {
+        ...state,
+        customers: [...state.customers.filter(item => item.id !== action.payload.id)],
+      };
+    case 'ADD_ITEM':
+      return {
+        ...state,
+        customers: [...state.customers, action.payload.object],
+      };
+    case 'EDIT_ITEM':
+      return {
+        // ...state,
+        // customers : [
+        //   ...state["customers"].filter(item => item.id !== action.payload.id),
+        // ]
+      };
+    default:
+      break;
+  }
+
   return state;
 };
 

@@ -1,35 +1,124 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import FormInput from '../../molecules/FormInput/FormInput';
-import Button from "../../atoms/Button/Button";
-import Header from "../../atoms/Header/Header";
+import Button from '../../atoms/Button/Button';
+import Header from '../../atoms/Header/Header';
+import { addItem, editItem } from '../../../actions/index';
 
 const StyledWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const FormButtonWrapper = styled.div`
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 `;
 
-const List = () =>{
-    return (
+const List = ({ item, type, mode, customers }) => {
+  const object = {
+    id: '',
+    thumb: '',
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    gender: '',
+    company: '',
+    city: '',
+    country: '',
+    country_code: '',
+    address: '',
+  };
+  return (
+    <>
+      {mode == 'add' ? (
         <StyledWrapper>
-            <Header>Form header</Header>
-            <FormInput></FormInput>
-            <FormInput></FormInput>
-            <FormInput></FormInput>
-            <FormInput></FormInput>
-            <FormButtonWrapper>
-                <Button>Add</Button>
-            </FormButtonWrapper>
+          <Header>Add customer</Header>
+          <FormInput label="First name" inputType="first_name"></FormInput>
+          <FormInput label="Last name" inputType="last_name"></FormInput>
+          <FormInput label="Email" inputType="email"></FormInput>
+          <FormInput label="Phone" inputType="phone"></FormInput>
+          <FormInput label="Gender" inputType="gender"></FormInput>
+          <FormInput label="Company" inputType="company"></FormInput>
+          <FormInput label="City" inputType="city"></FormInput>
+          <FormInput label="Country" inputType="country"></FormInput>
+          <FormInput label="Country code" inputType="country_code"></FormInput>
+          <FormInput label="Address" inputType="address"></FormInput>
+          <FormButtonWrapper>
+            <Button onClick={() => addNewObject(object, customers)}>Add</Button>
+          </FormButtonWrapper>
         </StyledWrapper>
-    )
-
+      ) : (
+        <StyledWrapper>
+          <Header>Edit customer</Header>
+          <FormInput label="First name" inputType="first_name">
+            {item.first_name}
+          </FormInput>
+          <FormInput label="Last name" inputType="last_name">
+            {item.last_name}
+          </FormInput>
+          <FormInput label="Email" inputType="email">
+            {item.email}
+          </FormInput>
+          <FormInput label="Phone" inputType="phone">
+            {item.phone}
+          </FormInput>
+          <FormInput label="Gender" inputType="gender">
+            {item.gender}
+          </FormInput>
+          <FormInput label="Company" inputType="company">
+            {item.company}
+          </FormInput>
+          <FormInput label="City" inputType="city">
+            {item.city}
+          </FormInput>
+          <FormInput label="Country" inputType="country">
+            {item.country}
+          </FormInput>
+          <FormInput label="Country code" inputType="country_code">
+            {item.country_code}
+          </FormInput>
+          <FormInput label="Address" inputType="address">
+            {item.address}
+          </FormInput>
+          <FormButtonWrapper>
+            <Button onClick={() => editItem('customer', item.id, object)}>Save</Button>
+          </FormButtonWrapper>
+        </StyledWrapper>
+      )}
+    </>
+  );
 };
 
-export default List;
+const addNewObject = (object, customers) => {
+  object.id = customers.length + 1;
+  object.first_name = 'test';
+  object.thumb = 'test';
+  object.first_name = 'test';
+  object.last_name = 'test';
+  object.email = 'test';
+  object.phone = 'test';
+  object.gender = 'test';
+  object.company = 'test';
+  object.city = 'test';
+  object.country = 'test';
+  object.country_code = 'test';
+  object.address = 'test';
+
+  addItem('customer', object);
+
+  // <Redirect to={'/customers'} />
+};
+
+const mapStateProps = ({ customers }) => {
+  return { customers };
+};
+
+const mapDispatchToProps = dispatch => ({
+  addItem: (itemType, object) => dispatch(addItem(itemType, object)),
+  editItem: (itemType, id, object) => dispatch(editItem(itemType, id, object)),
+});
+export default connect(mapStateProps, mapDispatchToProps)(List);

@@ -17,6 +17,7 @@ function Root() {
           <Switch>
             <Route exact path="/" component={Dashboard}></Route>
             <Route exact path="/customers" component={Customer}></Route>
+            <Route path="/details/:id" component={Details}></Route>
             <Route path="/customers/:id" component={Details}></Route>
             <Route exaxt path="/reminders" component={Reminder}></Route>
             <Route path="/reminders/:id" component={Reminder}></Route>
