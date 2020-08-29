@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 import React from 'react';
@@ -44,8 +45,8 @@ const List = ({ items, headers }) => {
   );
 };
 List.propTypes = {
-  items: PropTypes.element.isRequired,
-  headers: PropTypes.element.isRequired,
+  items: PropTypes.array.isRequired,
+  headers: PropTypes.array.isRequired,
 };
 
 export default List;

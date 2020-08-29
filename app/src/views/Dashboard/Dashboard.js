@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -50,14 +51,6 @@ const InvoicesSection = styled.div`
   border-left: 1px solid #ccc;
   height: 400px;
 `;
-const CircleChart = styled.div`
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: #167efb;
-  position: absolute;
-  right: 15%;
-`;
 
 const Dashborad = ({ customers, invoices, reminders }) => {
   return (
@@ -93,7 +86,6 @@ const Dashborad = ({ customers, invoices, reminders }) => {
           ></List>
         </InvoicesSection>
       </StyledContent>
-      {/* <CircleChart></CircleChart> */}
     </StyledWrapper>
   );
 };
@@ -102,9 +94,9 @@ const mapStateProps = ({ customers, invoices, reminders }) => {
   return { customers, invoices, reminders };
 };
 Dashborad.propTypes = {
-  customers: PropTypes.element.isRequired,
-  invoices: PropTypes.element.isRequired,
-  reminders: PropTypes.element.isRequired,
+  customers: PropTypes.array.isRequired,
+  invoices: PropTypes.array.isRequired,
+  reminders: PropTypes.array.isRequired,
 };
 
 export default connect(mapStateProps)(Dashborad);
