@@ -45,7 +45,7 @@ class Details extends Component {
   };
 
   render() {
-    const { customers } = this.props;
+    const { customers, removeItem } = this.props;
 
     const customerId = Number.parseInt(
       window.location.href.substr(

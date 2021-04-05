@@ -30,7 +30,7 @@ class MainTempalte extends Component {
     const { isModalVisible } = this.state;
     const {handleIsVisibleToggle} = this.handleIsVisibleToggle;
 
-    console.log(this.props, this.props.isModalVisible);
+    console.log(this.props);
     return (
       <>
         <GlobalStyle />

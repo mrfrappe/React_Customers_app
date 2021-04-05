@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Form from '../components/organisms/Form/Form';
@@ -32,15 +32,25 @@ const ModaBackdrop = styled.div`
 `;
 
 // eslint-disable-next-line no-unused-vars
-const Modal = ({ mode, type, isVisible, onModalClose}) => {
+const Modal = ({ mode, type, isVisible}) => {
+
+  function onModalClose() {
+    console.log(this)
+    isVisible = false;
+  }
+
+  useEffect(() => {
+
+  }, [isVisible])
+
   return (
     <>
       <ModalWrapper isVisible={isVisible}>
         <Form mode={mode} type={type}></Form>
       </ModalWrapper>
-      <ModaBackdrop isVisible={isVisible} />
+      {/* <ModaBackdrop isVisible={isVisible} /> */}
 
-      <ModaBackdrop isVisible={isVisible} onClick={() => onModalClose()}/>
+      <ModaBackdrop isVisible={isVisible} />
     </>
   );
 };

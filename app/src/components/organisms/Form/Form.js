@@ -21,7 +21,7 @@ const FormButtonWrapper = styled.div`
 
 const List = ({ item, type, mode, customers }) => {
 
-  console.log(item, customers)
+  console.log(item, customers, addItem, editItem)
   const object = {
     id: '',
     thumb: '',

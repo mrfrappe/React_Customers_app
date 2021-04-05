@@ -9,9 +9,13 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log(state.customers);
+  console.log(state.customers, action.type);
   switch (action.type) {
     case 'REMOVE_ITEM':
+
+    console.log('remove')
+
+    console.log([...state.customers.filter(item => item.id !== action.payload.id)].length)
       
       return {
         ...state,

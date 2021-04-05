@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
-import customersApp from '../reducers/reducers';
+import rootReducer from '../reducers/reducers';
 
 const store = createStore(
-    customersApp,/* preloadedState, */
+    rootReducer,/* preloadedState, */
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;
