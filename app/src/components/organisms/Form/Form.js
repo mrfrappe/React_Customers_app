@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import FormInput from '../../molecules/FormInput/FormInput';
 import Button from '../../atoms/Button/Button';
 import Header from '../../atoms/Header/Header';
-import { addItem, editItem } from '../../../actions/index';
+import { addItem as addItemAction, editItem as editItemAction} from '../../../actions/index';
 import PropTypes from 'prop-types';
 
 
@@ -19,9 +19,9 @@ const FormButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-const List = ({ item, type, mode, customers }) => {
+const List = ({ item, type, mode, customers, addItem, editItem}) => {
 
-  console.log(item, customers, addItem, editItem)
+  console.log(item, customers)
   const object = {
     id: '',
     thumb: '',
@@ -52,7 +52,7 @@ const List = ({ item, type, mode, customers }) => {
           <FormInput label="Country code" inputType="country_code"></FormInput>
           <FormInput label="Address" inputType="address"></FormInput>
           <FormButtonWrapper>
-            <Button onClick={() => addNewObject(object, customers)}>Add</Button>
+            <Button onClick={() => addNewObject(object, customers, addItem)}>Add</Button>
           </FormButtonWrapper>
         </StyledWrapper>
       ) : (
@@ -97,7 +97,7 @@ const List = ({ item, type, mode, customers }) => {
   );
 };
 
-const addNewObject = (object, customers) => {
+const addNewObject = (object, customers, addItem) => {
   object.id = customers.length + 1;
   object.first_name = 'test';
   object.thumb = 'test';
@@ -131,8 +131,8 @@ List.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
 
-  addItem: (itemType, object) => dispatch(addItem(itemType, object)),
-  editItem: (itemType, id, object) => dispatch(editItem(itemType, id, object)),
+  addItem: (itemType, object) => dispatch(addItemAction(itemType, object)),
+  editItem: (itemType, id, object) => dispatch(editItemAction(itemType, id, object)),
 });
 
 export default connect(mapStateProps, mapDispatchToProps)(List);
