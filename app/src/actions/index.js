@@ -21,12 +21,13 @@ export const addItem = (itemType, object) => {
   };
 };
 
-export const editItem = (itemType, id) => {
-  console.log('Edit ', itemType, id);
+export const editItem = (itemType, id, object) => {
+  console.log('Edit ', itemType, id, object);
   return {
     type: 'EDIT_ITEM',
     payload: {
       itemType,
+      object,
       id,
     },
   };

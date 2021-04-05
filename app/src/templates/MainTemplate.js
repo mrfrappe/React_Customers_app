@@ -7,7 +7,7 @@ import GlobalStyle from '../themes/GlobalStyle';
 import { theme } from '../themes/mainTheme';
 import Menu from '../components/organisms/Menu/Menu';
 import ButtonIcon from '../components/atoms/ButtonIcon/ButtonIcon';
-// import Modal from './Modal';
+import Modal from './Modal';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -24,9 +24,11 @@ class MainTempalte extends Component {
     this.setState(prevState => (prevState.isModalVisible = !prevState.isModalVisible));
   };
 
+
   render() {
     const { children } = this.props;
-    // const { isModalVisible } = this.state;
+    const { isModalVisible } = this.state;
+    const {handleIsVisibleToggle} = this.handleIsVisibleToggle;
 
     console.log(this.props, this.props.isModalVisible);
     return (
@@ -43,7 +45,7 @@ class MainTempalte extends Component {
           </ButtonIcon>
 
           {/* TODO check view by url */}
-          {/* <Modal mode="add" isVisible={isModalVisible} /> */}
+          <Modal mode="add" isVisible={isModalVisible} handleIsVisibleToggle={handleIsVisibleToggle} />
         </ThemeProvider>
       </>
     );

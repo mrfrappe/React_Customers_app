@@ -5,6 +5,8 @@ import FormInput from '../../molecules/FormInput/FormInput';
 import Button from '../../atoms/Button/Button';
 import Header from '../../atoms/Header/Header';
 import { addItem, editItem } from '../../../actions/index';
+import PropTypes from 'prop-types';
+
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -18,6 +20,8 @@ const FormButtonWrapper = styled.div`
 `;
 
 const List = ({ item, type, mode, customers }) => {
+
+  console.log(item, customers)
   const object = {
     id: '',
     thumb: '',
@@ -110,15 +114,25 @@ const addNewObject = (object, customers) => {
 
   addItem('customer', object);
 
+  console.log(customers)
+
   // <Redirect to={'/customers'} />
 };
 
-const mapStateProps = ({ customers }) => {
-  return { customers };
+const mapStateProps = ({ customers, invoices, reminders }) => {
+  return { customers, invoices, reminders };
+};
+
+List.propTypes = {
+  customers: PropTypes.array.isRequired,
+  invoices: PropTypes.array.isRequired,
+  reminders: PropTypes.array.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
+
   addItem: (itemType, object) => dispatch(addItem(itemType, object)),
   editItem: (itemType, id, object) => dispatch(editItem(itemType, id, object)),
 });
+
 export default connect(mapStateProps, mapDispatchToProps)(List);

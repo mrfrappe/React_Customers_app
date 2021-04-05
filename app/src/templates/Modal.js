@@ -32,7 +32,7 @@ const ModaBackdrop = styled.div`
 `;
 
 // eslint-disable-next-line no-unused-vars
-const Modal = ({ mode, type, isVisible }) => {
+const Modal = ({ mode, type, isVisible, onModalClose}) => {
   return (
     <>
       <ModalWrapper isVisible={isVisible}>
@@ -40,18 +40,19 @@ const Modal = ({ mode, type, isVisible }) => {
       </ModalWrapper>
       <ModaBackdrop isVisible={isVisible} />
 
-      {/* <ModaBackdrop isVisible={isVisible} onClick={() => onBackdropClick()}/> */}
+      <ModaBackdrop isVisible={isVisible} onClick={() => onModalClose()}/>
     </>
   );
 };
 
-const onBackdropClick = () => {
-  console.log(this.props);
-  this.props.isVisible = false;
+const onBackdropClick = (isVisible) => {
+  // console.log(a);
+  isVisible = false;
 };
 
 Modal.propTypes = {
   isVisible: PropTypes.element.isRequired,
+  onModalClose: PropTypes.func.isRequired
 };
 
 export default Modal;

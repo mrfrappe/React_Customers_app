@@ -8,11 +8,12 @@ const StyledWrapper = styled.div`
   flex-direction: column;
 `;
 
-const FormInput = ({ label, inputType }) => {
+const FormInput = ({ label, inputType, value }) => {
+  console.log(value)
   return (
     <StyledWrapper>
       <Label>{label}</Label>
-      <Input width="300px" placeholder={inputType} type={inputType}></Input>
+      <Input width="300px" placeholder={inputType} type={inputType}>{value}</Input>
     </StyledWrapper>
   );
 };

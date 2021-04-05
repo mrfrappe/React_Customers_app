@@ -12,11 +12,13 @@ const rootReducer = (state = initialState, action) => {
   console.log(state.customers);
   switch (action.type) {
     case 'REMOVE_ITEM':
+      
       return {
         ...state,
         customers: [...state.customers.filter(item => item.id !== action.payload.id)],
       };
     case 'ADD_ITEM':
+      console.log(action.payload)
       return {
         ...state,
         customers: [...state.customers, action.payload.object],
